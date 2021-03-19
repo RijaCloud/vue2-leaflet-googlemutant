@@ -52,17 +52,17 @@ export default {
     this.mapObject = L.gridLayer.googleMutant(this.options);
     L.DomEvent.on(this.mapObject, this.$listeners);
     propsBinder(this, this.mapObject, props);
-
-    if (!(typeof google === 'object' && typeof google.maps === 'object')) {
+    //console.log(google)
+    //if (!(typeof google === 'object' && typeof google.maps === 'object')) {
       let googleapisscript = document.createElement('script');
-      let scriptUrl = 'https://maps.googleapis.com/maps/api/js?key='+this.apikey;
+      let scriptUrl = 'https://maps.googleapis.com/maps/api/js?key='+this.apikey+'&libraries=places,geometry';
 
       scriptUrl += this.lang ? '&language='+this.lang : '';
       scriptUrl += this.region ? '&region='+this.region : '';
 
       googleapisscript.setAttribute('src', scriptUrl);
       document.head.appendChild(googleapisscript);
-    }
+   // }
 
     this.ready = true;
     this.parentContainer = findRealParent(this.$parent);
