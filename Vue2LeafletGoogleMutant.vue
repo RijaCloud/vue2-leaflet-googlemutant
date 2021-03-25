@@ -55,7 +55,7 @@ export default {
     //console.log(google)
     //if (!(typeof google === 'object' && typeof google.maps === 'object')) {
       let googleapisscript = document.createElement('script');
-      let scriptUrl = 'https://maps.googleapis.com/maps/api/js?key='+this.apikey+'&libraries=places,geometry';
+      let scriptUrl = 'https://maps.googleapis.com/maps/api/js?key='+this.apikey+'&libraries=places,drawing,visualization,geometry';
 
       scriptUrl += this.lang ? '&language='+this.lang : '';
       scriptUrl += this.region ? '&region='+this.region : '';
